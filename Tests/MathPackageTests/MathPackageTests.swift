@@ -2,11 +2,14 @@ import XCTest
 @testable import MathPackage
 
 final class MathPackageTests: XCTestCase {
-    func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
 
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+    func testSquare() {
+        XCTAssertEqual(MathUtils.square(2), 4)
+        XCTAssertEqual(MathUtils.square(5), 25)
+        XCTAssertEqual(MathUtils.square(-3), 9)
     }
+
+    static var allTests = [
+        ("testSquare", testSquare),
+    ]
 }
