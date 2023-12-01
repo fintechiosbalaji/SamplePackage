@@ -44,7 +44,7 @@ public class MySPMModuleCoordinator: MySPMCoordinator {
     }
 
     public func start() {
-        let homeViewController = HomeViewController()
+        let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         let navigationController = UINavigationController(rootViewController: homeViewController)
 
         window.rootViewController = navigationController
