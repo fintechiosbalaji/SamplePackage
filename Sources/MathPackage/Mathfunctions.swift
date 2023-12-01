@@ -30,7 +30,9 @@ public struct MyMathFunctions {
     }
     
     public static func invokeSDK(){
-        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let coordinator = MySPMModuleCoordinator(window: window)
+        coordinator.start()
     }
 }
 
