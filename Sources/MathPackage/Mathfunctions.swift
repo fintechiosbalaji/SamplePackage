@@ -1,12 +1,17 @@
 //
 //  File.swift
 //  
-//
+//tes
 //  Created by Srinika on 01/12/23.
 //
 
 import Foundation
 import Alamofire
+import UIKit
+
+public protocol MySPMCoordinator {
+    func start()
+}
 
 public struct MyMathFunctions {
     public static func square(_ number: Int) -> Int {
@@ -22,5 +27,25 @@ public struct MyMathFunctions {
                 completion(.failure(error))
             }
         }
+    }
+    
+    public static func invokeSDK(){
+        
+    }
+}
+
+public class MySPMModuleCoordinator: MySPMCoordinator {
+    private let window: UIWindow
+
+    init(window: UIWindow) {
+        self.window = window
+    }
+
+    public func start() {
+        let homeViewController = HomeViewController()
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
     }
 }
